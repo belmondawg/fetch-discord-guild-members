@@ -51,7 +51,7 @@ class Client:
             return json.loads(response)
 
     def fetch_members(self, guild_id: str, channel_id: str) -> dict:
-        payload = {
+        self.send({
             'op': 14,
             'd': {
                 'guild_id': guild_id,
@@ -63,9 +63,8 @@ class Client:
                     channel_id: [[0, 99]]
                 },
             },
-        }
+        })
         
-        self.ws.send(json.dumps(payload))
         print(f'subscribed to guild: {guild_id} on channel: {channel_id}')
         print(f'fetching members...')
 
