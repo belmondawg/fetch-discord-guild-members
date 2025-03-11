@@ -128,7 +128,7 @@ class Client:
         build_number = self.get_build_number()
         print(f'discord build number: {build_number}')
 
-        payload = {
+        self.send({
             'op': 2,
             'd': {
                 'token': self.token,
@@ -161,9 +161,8 @@ class Client:
                     'guild_versions':{}
                 }
             }
-        }
-
-        self.send(payload)
+        })
+        
         response = self.receive()
         
         if response['t'] == 'READY':
