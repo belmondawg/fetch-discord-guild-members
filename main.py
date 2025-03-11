@@ -68,9 +68,8 @@ class Client:
         print(f'subscribed to guild: {guild_id} on channel: {channel_id}')
         print(f'fetching members...')
 
-        member_range = [[0, 99]]
         member_count = 0
-        index = 0
+        member_range = [[0, 99]]
         members = []
 
         while True:
