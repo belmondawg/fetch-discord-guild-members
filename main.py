@@ -168,7 +168,6 @@ class Client:
             print(f'connected to: {response["d"]["user"]["username"]}')
 
 if __name__ == '__main__':
-
     software_names = [SoftwareName.CHROME.value]
     operating_systems = [OperatingSystem.WINDOWS.value]   
 
